@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>About our Project</h1>
+</header>
+  
+
+<nav>
+  <ul>
+  <li><a href="{% url 'home' %}">Home</a></li>
+
+  </ul>
+</nav>
+
+
+<article>
+  <h1 style="background-color: gray">Project Name :</h1>
+  <p>Cric info<p>
+  <h1 style="background-color: gray">Details :</h1>
+  <p>* It contains profile of every Player related to cricket carrier.</p>
+
+<h1 style="background-color: gray">Group Member :</h1>
+<div>
+  <div>
+    <p>Md Mahbubur Rahman<br>Dept. : CSE<br>ID : 134005<br>Year : 3/1</p>
+  </div>
+  <div>
+    <p>Md. Liton Mia<br>Dept. : CSE<br>ID : 134023<br>Year : 3/1</p>
+  </div>
+</div>
+
+<h1 style="background-color: gray">Course Teacher :</h1>
+<div>
+  <div>
+    <p>Dr. Fazlul Hasan Siddiqui<BR>B.Sc Engg. (IUT), M.Sc Engg. (BUET), Ph.D (ANU, Australia)<br>Field of interest: Neural Network and Fuzzy System<br>E-mail: siddiqui.cse at gmail.com, fazlul.siddiqui at duet.ac.bd</p>
+  </div>
+
+  <div>
+    <p>Dr. Md. Obaidur Rahman <br>B.Sc. Engg. (IUT), M.Sc. Engg. (South Korea), Ph.D. (South Korea)<br>Field of Specialization: Wireless Networks: MAC Layer Protocols
+<br>Field of interest: Data Communication and Computer Networks: </p>
+  </div>
+</div>
+
+</article>
+
+<footer>Copyright &copy; CricInfo.com</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <title>Cricket Information</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script type="text/javascript" src="{% static 'javascript/jquery.dropotron-1.0.js' %}"></script>
+            <script type="text/javascript" src="{% static 'javascript/jquery.slidertron-1.1.js' %}"></script>
+            <script type="text/javascript" src="{% static 'javascript/jquery.slidertron-1.1.js' %}"></script>
+            <script type="text/javascript">
+            $(function() {
+                $('#menu > ul').dropotron({
+                    mode: 'fade',
+                    globalOffsetY: 11,
+                    offsetY: -15
+                });
+                $('#slider').slidertron({
+                    viewerSelector: '.viewer',
+                    indicatorSelector: '.indicator span',
+                    reelSelector: '.reel',
+                    slidesSelector: '.slide',
+                    speed: 'slow',
+                    advanceDelay: 4000
+                });
+            });
+        </script>
+
+
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    </head>
+    <body>
+        <div id="wrapper">
+
+        
+            <div class="page-header">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'post_new' %}" class="top-menu">Post <span class="glyphicon glyphicon-plus"></span></a>
+                        <a href="{% url 'post_draft_list' %}" class="top-menu">Draft <span class="glyphicon glyphicon-edit"></span></a>
+                        <p class="top-menu">Hello!! {{ user.username }}<small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="top-menu">Log in  <span class="glyphicon glyphicon-lock"></span></a>
+                    {% endif %}
+                    <h1>      Welcome to Cricket World</h1>
+            </div>
+
+            <div id="menu">
+                <ul>    
+                    <li><a href="#">Home</a></li>
+                    
+                    <li class="first1">
+                        <span class="opener">Cricketer Profile<b></b></span>
+                        <ul>
+                            <li><a href="{% url 'logout' %}">Batsman</a></li>
+                            <li><a href="{% url 'logout' %}">Bowler</a></li>
+                            <li><a href="{% url 'logout' %}">All-Rounder</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'logout' %}">About</a></li>
+                    <li>
+                        <span class="opener">More<b></b></span>
+                        <ul>
+                            <li><a href="#">ICC</a></li>
+                            <li><a href="#">Cricket Board</a></li>
+                            <li><a href="#">Cricket History</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+
+
+
+
+
+            <div id="slider">
+                <div class="viewer">
+                    <div class="reel">
+                        <div class="slide">
+                            <img src="{% static 'image/slide01.jpg' %}" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'image/slide02.jpg' %}" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'image/slide03.jpg' %}" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'image/slide04.jpg' %}" alt="" />
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'image/slide05.jpg' %}" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="page">
+
+                <div id="content" align="left">
+                        <h2>Welcome to cricket world</h2>
+                        <p>
+                            Cricket is a bat-and-ball game played between two teams of eleven players on a cricket field, at the centre of which is a rectangular 22-yard-long pitch with a wicket (a set of three wooden stumps) sited at each end. One team, designated the batting team, attempts to score as many runs as possible, whilst their opponents field. Each phase of play is called an innings. After either ten batsmen have been dismissed or a fixed number of overs have been completed, the innings ends and the two teams then swap roles.
+                        </p>
+                            <div class="row">
+                                {% block content %}
+                                {% endblock %}
+                            </div>
+
+
+                    <br class="clearfix" />
+                </div>
+
+
+
+                <div id="sidebar">
+                    <div class="box2">
+                        <h3>News</h3>
+                        <div class="date-list">
+                        The 2019 Cricket World Cup is scheduled to be hosted by England and Wales,[1][2] from 30 May to 15 July 2019.[3] This will be the 12th Cricket World Cup competition, and the fifth time it will be held in England and Wales, following the 1975, 1979, 1983 and 1999 World Cups. The hosting rights were awarded in April 2006, after England and Wales withdrew from the bidding to host the 2015 Cricket World Cup, which was held in Australia and New Zealand. The first match will be played at The Oval while the final will be played at Lord's. The 10-team-tournament has gained much criticism due to the lack of associate teams in the tournament, but the ICC plan to keep the competition at just 10 teams.
+
+                        </div>
+                    </div>
+
+
+                    <div class="box">
+                        <h3>Beginning History</h3>
+                        <div class="date-list">
+                        Charles Lennox, 2nd Duke of Richmond was a leading patron of early cricket. The sport of cricket has a known history beginning in the late 16th century. Having originated in south-east England, it became the country's national sport in the 18th century and has developed globally in the 19th and 20th centuries. International matches have been played since 1844
+
+                        </div>
+                    </div>
+                </div>
+                <br class="clearfix" />
+
+            </div>
+        </div>
+        <div id="footer">
+            &copy; Untitled. All rights reserved.
+        </div>
+    </body>
+</html>
+
+
